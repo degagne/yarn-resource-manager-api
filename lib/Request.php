@@ -18,7 +18,7 @@ class Request
      */
     final private function formatDefault($response)
     {
-        return json_decode($response, true);
+        return json_decode($response, TRUE);
     }
 
     /**
@@ -29,7 +29,7 @@ class Request
      */
     final private function formatJson($response)
     {
-        return json_encode(json_decode($response, true), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        return json_encode(json_decode($response, TRUE), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     }
 
     /**
@@ -41,8 +41,8 @@ class Request
     final private function formatXml($response)
     {
         $domxml = new \DomDocument('1.0');
-        $domxml->preserveWhiteSpace = false;
-        $domxml->formatOutput = true;
+        $domxml->preserveWhiteSpace = FALSE;
+        $domxml->formatOutput = TRUE;
         $domxml->loadXML($response);
         return $domxml->saveXML();
     }
@@ -60,7 +60,7 @@ class Request
             case 'default': return $this->formatDefault($response);
             case 'json':    return $this->formatJson($response);
             case 'xml':     return $this->formatXml($response);
-		}
+        }
     }
 
     /**
@@ -81,10 +81,10 @@ class Request
 
         $curlopts = [
             CURLOPT_URL            => $url,
-            CURLOPT_HEADER         => false,
+            CURLOPT_HEADER         => FALSE,
             CURLOPT_HTTPHEADER     => [$content_type],
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_RETURNTRANSFER => TRUE,
+            CURLOPT_FOLLOWLOCATION => TRUE,
             CURLOPT_CUSTOMREQUEST  => $request,
         ];
 
