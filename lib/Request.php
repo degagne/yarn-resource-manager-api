@@ -25,7 +25,7 @@ class Request
      * Format JSON response.
      *
      * @param  string $response resource manager api response
-     * @return mixed  formatted response
+     * @return string  formatted response
      */
     final private function formatJson($response)
     {
@@ -36,7 +36,7 @@ class Request
      * Format XML response.
      *
      * @param  string $response resource manager api response
-     * @return mixed  formatted response
+     * @return string  formatted response
      */
     final private function formatXml($response)
     {
