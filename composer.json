@@ -4,7 +4,7 @@
     "description": "PHP Yarn Resource Manager REST API library",
     "keywords": ["php"],
     "homepage": "https://github.com/degagne/yarn-resource-manager-api",
-    "license": "",
+    "license": "MIT",
     "authors": [
         {
             "name": "Deric Degagne",
